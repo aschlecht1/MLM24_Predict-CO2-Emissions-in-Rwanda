@@ -1,0 +1,8 @@
+# Khine's documentation
+
+There are 497 unique locations marked by unique lat-long pairs. 
+From the indices, we see there are 159 observations per unique location. This is because there are 53 weeks recorded per year (week 0-52) from 2019-2021. 53 weeksx3years = 159 observations per location.
+
+The test set only has 49 weeks per location in 2022, because we are predicting through November only. 
+
+Our end goal then is to predict emissions for 49 weeks out per location. 
