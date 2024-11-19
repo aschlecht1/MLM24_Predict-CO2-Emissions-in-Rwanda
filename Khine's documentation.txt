@@ -6,3 +6,13 @@ From the indices, we see there are 159 observations per unique location. This is
 The test set only has 49 weeks per location in 2022, because we are predicting through November only. 
 
 Our end goal then is to predict emissions for 49 weeks out per location. 
+
+From the average emissions per year_week plot, there are two peaks in emission between weeks 10-20 and weeks 40-46. This is true even for 2020 when the rest of the emissions were lower. It seems we have seasonal variation in the data. But no obvious trend. 
+
+10/10/2024
+If you run PCA on your time series, you get a "virtual time series". Measure the train and test on there. Keep 95% of the variance - then toss out however many variables that don't contribute to the 95%. 
+Can detect seasonality region-specific in the PCA'ed data.
+
+Try a VAR (Vector Auto Regression) model on the full dataset with all the regions. It uses a sliding window. It is a linear model. It is going to do poorly because it will overfit. 
+
+Generate predictions from the PCA'ed data -- then multiply them by the PCA components -- this will give us the full dimensional space. 
